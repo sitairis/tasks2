@@ -25,27 +25,6 @@
 //     }
 // }
 
-function missing(arrayOfValues) {
-
-    if(!isValid(arrayOfValues)){
-        return null;
-    }
-
-    let maxValue = arrayOfValues.reduce((prevValue, currentValue) => {
-        return Math.max(prevValue, currentValue);
-    });
-    let lengthOfValues = arrayOfValues.length;
-
-    if (maxValue !== lengthOfValues) {
-        for (let number = 1; number <= maxValue; number++) {
-          if(!isContains(number, arrayOfValues)){
-              return number;
-          }
-        }
-    }
-}
-
-// /*если считать от произвольного числа */
 // function missing(arrayOfValues) {
 //
 //     if(!isValid(arrayOfValues)){
@@ -55,20 +34,41 @@ function missing(arrayOfValues) {
 //     let maxValue = arrayOfValues.reduce((prevValue, currentValue) => {
 //         return Math.max(prevValue, currentValue);
 //     });
-//     let minValue = arrayOfValues.reduce((prevValue, currentValue) => {
-//         return Math.min(prevValue, currentValue);
-//     });
 //     let lengthOfValues = arrayOfValues.length;
 //
 //     if (maxValue !== lengthOfValues) {
-//         for (let index = minValue; index <= maxValue; index++) {
-//             console.log(isContains(index, arrayOfValues) );
-//             if(!isContains(index, arrayOfValues)){
-//                 return index;
-//             }
+//         for (let number = 1; number <= maxValue; number++) {
+//           if(!isContains(number, arrayOfValues)){
+//               return number;
+//           }
 //         }
 //     }
 // }
+
+// /*если считать от наименьшего числа */
+function missing(arrayOfValues) {
+
+    if(!isValid(arrayOfValues)){
+        return null;
+    }
+
+    let maxValue = arrayOfValues.reduce((prevValue, currentValue) => {
+        return Math.max(prevValue, currentValue);
+    });
+    let minValue = arrayOfValues.reduce((prevValue, currentValue) => {
+        return Math.min(prevValue, currentValue);
+    });
+    let lengthOfValues = arrayOfValues.length;
+
+    if (maxValue !== lengthOfValues) {
+        for (let index = minValue; index <= maxValue; index++) {
+            console.log(isContains(index, arrayOfValues) );
+            if(!isContains(index, arrayOfValues)){
+                return index;
+            }
+        }
+    }
+}
 
 console.log(missing([1, 3, 4])); // 2
 console.log(missing([5, 1, 4, 2])); // 3

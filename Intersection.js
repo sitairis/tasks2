@@ -27,7 +27,7 @@ console.log(intersection(
     [1, 2, 3, 4, 5],
     [2, 8, 3]
 )); //должно вернуть [2, 3]
-//
+
 console.log(intersection(
     [1, 2, 3, 4, 5]
 )); //должно вернуть [2, 3]
