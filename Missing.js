@@ -17,6 +17,7 @@
 //         let sumOfValues = arrayOfValues.reduce((resultSum, currentValue) =>{
 //             return resultSum += currentValue;
 //         });
+//
 //         let checkSum = (1 + maxValue)*maxValue/2;
 //
 //         let missingNumber = checkSum - sumOfValues;
@@ -52,47 +53,40 @@ function missing(arrayOfValues) {
         return null;
     }
 
-    let maxValue = arrayOfValues.reduce((prevValue, currentValue) => {
-        return Math.max(prevValue, currentValue);
-    });
+    let maxValue = arrayOfValues.reduce((prevValue, currentValue) =>
+        return Math.max(prevValue, currentValue));
     let minValue = arrayOfValues.reduce((prevValue, currentValue) => {
         return Math.min(prevValue, currentValue);
     });
     let lengthOfValues = arrayOfValues.length;
 
-    if (maxValue !== lengthOfValues) {
-        for (let index = minValue; index <= maxValue; index++) {
-            console.log(isContains(index, arrayOfValues) );
-            if(!isContains(index, arrayOfValues)){
-                return index;
-            }
+    for (let number = maxValue; number >= minValue; number--){
+        if (!isContains( number, arrayOfValues)){
+            return number;
         }
     }
 }
 
-console.log(missing([1, 3, 4])); // 2
+console.log(missing([-1, 0, 1, 3, 4])); // 2
 console.log(missing([5, 1, 4, 2])); // 3
-console.log(missing([1, 2, 3, 4])); // undefined
+console.log(missing([1, 2, 3])); // undefined
 
 function isContains(value, arrayOfValues) {
-    let returnIsContains = false;
+    let isContains = false;
 
     if(arrayOfValues.indexOf(value) !== -1){
-        returnIsContains = true;
+        isContains = true;
     }
 
-    return returnIsContains;
+    return isContains;
 }
 
-function isValid(arrayOfValues) {
-    let lengthOfValue = arrayOfValues.length;
+function isValid(arrayOfValues = []) {
 
-    return arrayOfValues && Array.isArray(arrayOfValues) && lengthOfValue && isArrayOfNumber(arrayOfValues);
+    return Array.isArray(arrayOfValues) && arrayOfValues.length && isArrayOfNumber(arrayOfValues);
 }
 
 function isArrayOfNumber(arrayOfValues) {
 
-    return arrayOfValues.every( (element) => {
-        return typeof element === 'number';
-    });
+    return arrayOfValues.every( (element) => typeof element === 'number' );
 }

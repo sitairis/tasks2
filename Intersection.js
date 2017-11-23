@@ -7,7 +7,8 @@
  * @return {number[]}
  */
 function intersection(leftArray, rightArray) {
-    if(isValid(leftArray) || isValid(rightArray)){
+
+    if(!isValid(leftArray) || !isValid(rightArray)){
         return null;
     }
 
@@ -30,13 +31,14 @@ console.log(intersection(
 
 console.log(intersection(
     [1, 2, 3, 4, 5]
-)); //должно вернуть [2, 3]
+));
 
 function isContain(value, arrayOfValues) {
+
     return arrayOfValues.indexOf(value) !== -1;
 }
 
-function isValid(value) {
-    let lengthOfValue = value.length;
-    return value || Array.isArray(value) || lengthOfValue;
+function isValid(values = []) {
+
+    return Array.isArray(values) && values.length;
 }
