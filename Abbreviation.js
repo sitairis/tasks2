@@ -3,10 +3,10 @@
 /**
  * Вовзращает аббревиатуру штата США.
  *
- * @param {string} state - название штата (на английском, только из США). Может прийти из любого источника,
  *  в любом виде (правильное/неправильное название, в lowerCase/upperCase, может прийти готовая аббревиатура и т.д.)
  *
  * @return {string} - аббревиатура штата (в upper case)
+ * @param nameOfState
  */
 function getAbbreviation(nameOfState = '') {
 
@@ -85,7 +85,7 @@ for(let j = 0;j<states[ind].length;j++){
                 result.end++;
                 // console.log(`${result.begin} , ${result.end}`);
                 ar.push(result);
-            };
+            }
             let maxindex = getvalueOfResstr(ar);
            return ABBREVIATIONS[keyLetter][maxindex];
         }

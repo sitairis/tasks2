@@ -2,9 +2,9 @@
 
 /**
  * Найти пересечение двух массивов
- * @param  {number[]} left
- * @param  {number[]} right
  * @return {number[]}
+ * @param leftArray
+ * @param rightArray
  */
 function intersection(leftArray, rightArray) {
 
@@ -24,18 +24,18 @@ function intersection(leftArray, rightArray) {
     return sameElementsArray;
 }
 
-console.log(intersection(
+console.log(`${intersection(
     [1, 2, 3, 4, 5],
     [2, 8, 3]
-)); //должно вернуть [2, 3]
+)}`); //должно вернуть [2, 3]
 
-console.log(intersection(
+console.log(`${intersection(
     [1, 2, 3, 4, 5]
-));
+)}`);//null
 
 function isContain(value, arrayOfValues) {
 
-    return arrayOfValues.indexOf(value) !== -1;
+    return arrayOfValues.includes(value);
 }
 
 function isValid(values = []) {

@@ -2,8 +2,8 @@
 
 /**
  * Найти пропущеное значение в неотсортированном массиве.
- * @param  {number[]} values
  * @return {boolean}
+ * @param arrayOfValues
  */
 
 // function missing(arrayOfValues) {
@@ -53,11 +53,9 @@ function missing(arrayOfValues) {
         return null;
     }
 
-    let maxValue = arrayOfValues.reduce((prevValue, currentValue) =>
-        return Math.max(prevValue, currentValue));
-    let minValue = arrayOfValues.reduce((prevValue, currentValue) => {
-        return Math.min(prevValue, currentValue);
-    });
+    let maxValue = arrayOfValues.reduce((prevValue, currentValue) => Math.max(prevValue, currentValue));
+    let minValue = arrayOfValues.reduce((prevValue, currentValue) =>  Math.min(prevValue, currentValue));
+
     let lengthOfValues = arrayOfValues.length;
 
     for (let number = maxValue; number >= minValue; number--){
