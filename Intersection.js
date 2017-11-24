@@ -34,11 +34,9 @@ console.log(`${intersection(
 )}`);//null
 
 function isContain(value, arrayOfValues) {
-
     return arrayOfValues.includes(value);
 }
 
 function isValid(values = []) {
-
     return Array.isArray(values) && values.length;
 }
