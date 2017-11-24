@@ -56,8 +56,6 @@ function missing(arrayOfValues) {
     let maxValue = arrayOfValues.reduce((prevValue, currentValue) => Math.max(prevValue, currentValue));
     let minValue = arrayOfValues.reduce((prevValue, currentValue) =>  Math.min(prevValue, currentValue));
 
-    let lengthOfValues = arrayOfValues.length;
-
     for (let number = maxValue; number >= minValue; number--){
         if (!isContains( number, arrayOfValues)){
             return number;
