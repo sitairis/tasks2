@@ -68,7 +68,8 @@ function getAbbreviation(nameOfState = '') {
     };
 
     for (let abbreviation in ABBREVIATIONS) {
-        if ( nameOfState === abbreviation || nameOfState === ABBREVIATIONS[abbreviation] ) {
+        if (nameOfState === abbreviation || nameOfState === ABBREVIATIONS[abbreviation]) {
+
             return abbreviation;
         }
     }
