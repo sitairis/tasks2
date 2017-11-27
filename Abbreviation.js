@@ -81,7 +81,8 @@ console.log(`${getAbbreviation('Florida')}`); // 'FL'
 console.log(`${getAbbreviation('FL')}`); // 'FL'
 console.log(`${getAbbreviation('hgfdg')}`); // 'undefined'
 console.log(`${getAbbreviation('Alask')}`); // 'undefined'
-console.log(`${getAbbreviation('Wyoming')}`); // 'WY'
+// console.log(`${getAbbreviation('Wyoming')}`); // 'WY'
+console.log(`${getAbbreviation.call(getAbbreviation, 'Wyoming')}`); // 'WY'
 console.log(`${getAbbreviation('Rhode Island')}`); // 'PI'
 
 function isValid(value  = '') {

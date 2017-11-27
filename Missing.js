@@ -71,6 +71,7 @@ console.log(`${missingFromMinValue([-1, 0, 1, 3, 4])}`); // 2
 console.log(`${missingFromMinValue([5, 1, 4, 2])}`); // 3
 console.log(`${missingFromMinValue([1, 2, 3])}`); // undefined
 
+
 function isContains(value, arrayOfValues) {
     let isContains = false;
 
