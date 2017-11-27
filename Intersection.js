@@ -24,6 +24,7 @@ function intersection(leftArray, rightArray) {
     return sameElementsArray;
 }
 
+console.log(`intersection ()`);
 console.log(`${intersection(
     [1, 2, 3, 4, 5],
     [2, 8, 3]

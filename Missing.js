@@ -7,12 +7,13 @@
  */
 
 function missingSum(arrayOfValues) {
-    // let maxValue = Math.max.apply(null, arrayOfValues);
-    let maxValue = arrayOfValues.reduce( (prevValue, currentValue) => Math.max(prevValue, currentValue));
+    let maxValue = Math.max.apply(null, arrayOfValues);
+    // let maxValue = arrayOfValues.reduce( (prevValue, currentValue) => Math.max(prevValue, currentValue));
     let lengthOfValues = arrayOfValues.length;
 
     if( maxValue !== lengthOfValues ){
-        let sumOfValues = arrayOfValues.reduce((resultSum, currentValue) => resultSum += currentValue);
+        // let sumOfValues = arrayOfValues.reduce((resultSum, currentValue) => resultSum += currentValue);
+        let sumOfValues = sum(arrayOfValues);
         let checkSum = (1 + maxValue)*maxValue/2;
 
         return checkSum - sumOfValues;
@@ -24,8 +25,8 @@ function missing(arrayOfValues) {
     if(!isValid(arrayOfValues)){
         return null;
     }
-
-    let maxValue = arrayOfValues.reduce((prevValue, currentValue) => Math.max(prevValue, currentValue));
+    let maxValue = Math.max.apply(null, arrayOfValues);
+    // let maxValue = arrayOfValues.reduce((prevValue, currentValue) => Math.max(prevValue, currentValue));
     let lengthOfValues = arrayOfValues.length;
 
     if (maxValue !== lengthOfValues) {
@@ -44,8 +45,10 @@ function missingFromMinValue(arrayOfValues) {
         return null;
     }
 
-    let maxValue = arrayOfValues.reduce((prevValue, currentValue) => Math.max(prevValue, currentValue));
-    let minValue = arrayOfValues.reduce((prevValue, currentValue) =>  Math.min(prevValue, currentValue));
+    // let maxValue = arrayOfValues.reduce((prevValue, currentValue) => Math.max(prevValue, currentValue));
+    // let minValue = arrayOfValues.reduce((prevValue, currentValue) =>  Math.min(prevValue, currentValue));
+    let maxValue = Math.max.apply(null, arrayOfValues);
+    let minValue = Math.min.apply(null, arrayOfValues);
 
     for (let number = maxValue; number >= minValue; number--){
         if (!isContains( number, arrayOfValues)){
@@ -53,6 +56,9 @@ function missingFromMinValue(arrayOfValues) {
         }
     }
 }
+
+console.log(`missing ()`);
+
 console.log(`${missingSum([ 1, 3, 4])}`); // 2
 console.log(`${missingSum([5, 1, 4, 2])}`); // 3
 console.log(`${missingSum([1, 2, 3])}`); // undefined
@@ -83,4 +89,8 @@ function isValid(arrayOfValues = []) {
 function isArrayOfNumber(arrayOfValues) {
 
     return arrayOfValues.every( (element) => typeof element === 'number' );
+}
+
+function sum(arrayOfValues) {
+    return [].reduce.call(arrayOfValues, (a, b) => a + b);
 }

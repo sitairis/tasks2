@@ -75,6 +75,8 @@ function getAbbreviation(nameOfState = '') {
     }
 }
 
+console.log(`getAbbreviation ()`);
+
 console.log(`${getAbbreviation('Florida')}`); // 'FL'
 console.log(`${getAbbreviation('FL')}`); // 'FL'
 console.log(`${getAbbreviation('hgfdg')}`); // 'undefined'
